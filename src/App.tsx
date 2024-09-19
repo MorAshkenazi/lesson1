@@ -4,6 +4,11 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
+import Details from "./components/Details";
+import Message1 from "./components/Message1";
+import Message2 from "./components/Message2";
+import Message3 from "./components/Message3";
+import Products from "./components/Products";
 
 function App() {
   let myName: string = "Mor";
@@ -15,12 +20,17 @@ function App() {
   return (
     <div className="App">
       <Navbar user={username} lastLogin={lastLogin} />
-      <Home username={username} />
-      <h1>{myName}</h1>
+      {/* <Home username={username} /> */}
+      <Details />
+      <Message1 isAdmin={true} />
+      <Message2 isAdmin={true} />
+      <Message3 isAdmin={false} />
+      <Products />
+      {/* <h1>{myName}</h1>
       <p>Hello from App component</p>
       <img src={animalUrl} alt="cute giraffe" />
       <div>Animal age is {age + 10}</div>
-      <p>{Math.floor(Math.random() * 100)}</p>
+      <p>{Math.floor(Math.random() * 100)}</p> */}
       <Footer developerName={myName} />
     </div>
   );
