@@ -9,6 +9,8 @@ import Message1 from "./components/Message1";
 import Message2 from "./components/Message2";
 import Message3 from "./components/Message3";
 import Products from "./components/Products";
+import Users from "./components/Users";
+import Photos from "./components/Photos";
 
 function App() {
   let myName: string = "Mor";
@@ -22,10 +24,12 @@ function App() {
       <Navbar user={username} lastLogin={lastLogin} />
       {/* <Home username={username} /> */}
       <Details />
-      <Message1 isAdmin={true} />
+      <Users />
+      <Photos />
+      {/* <Message1 isAdmin={true} />
       <Message2 isAdmin={true} />
       <Message3 isAdmin={false} />
-      <Products />
+      <Products /> */}
       {/* <h1>{myName}</h1>
       <p>Hello from App component</p>
       <img src={animalUrl} alt="cute giraffe" />
