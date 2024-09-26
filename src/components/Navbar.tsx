@@ -1,4 +1,5 @@
 import { FunctionComponent } from "react";
+import { NavLink } from "react-router-dom";
 
 interface NavbarProps {
   user: string;
@@ -11,14 +12,9 @@ const Navbar: FunctionComponent<NavbarProps> = ({ user, lastLogin }) => {
       <h4>
         Welcome {user}, logged in {lastLogin}
       </h4>
-      <a
-        href="/"
-        className="me-2 text-decoration-none"
-        style={{ backgroundColor: "yellow", color: "red" }}
-      >
-        Home
-      </a>
-      <a href="/contacts">Contacts</a>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/products">Products</NavLink>
+      <NavLink to="/users">Users</NavLink>
     </div>
   );
 };
