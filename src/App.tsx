@@ -14,6 +14,8 @@ import Photos from "./components/Photos";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PageNotFound from "./components/PageNotFound";
 import UserDetails from "./components/UserDetails";
+import NewUser from "./components/NewUser";
+import Register from "./components/Register";
 
 function App() {
   let myName: string = "Mor";
@@ -29,8 +31,12 @@ function App() {
         <Routes>
           <Route path="/" element={<Home username={username} />} />
           <Route path="/products" element={<Products />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="/users/:id" element={<UserDetails />} />
+          <Route path="/users">
+            <Route index element={<Users />} />
+            <Route path=":id" element={<UserDetails />} />
+            <Route path="new" element={<NewUser />} />
+          </Route>
+          <Route path="/register" element={<Register/>} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer developerName={myName} />

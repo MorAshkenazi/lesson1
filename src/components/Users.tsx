@@ -1,17 +1,21 @@
 import { FunctionComponent, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { getAllUsers } from "../services/usersService";
 
 interface UsersProps {}
 
 const Users: FunctionComponent<UsersProps> = () => {
   let [users, setUsers] = useState<any>([]);
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((users) => {
-        setUsers(users);
-        console.log(users);
-      });
+    // fetch("https://jsonplaceholder.typicode.com/users")
+    //   .then((response) => response.json())
+    //   .then((users) => {
+    //     setUsers(users);
+    //     console.log(users);
+    //   });
+    getAllUsers()
+      .then((result) => setUsers(result.data))
+      .catch((err) => console.log(err));
   }, []);
   return (
     <>
