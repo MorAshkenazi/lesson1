@@ -12,10 +12,19 @@ const Navbar: FunctionComponent<NavbarProps> = ({ user, lastLogin }) => {
       <h4>
         Welcome {user}, logged in {lastLogin}
       </h4>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="/products">Products</NavLink>
-      <NavLink to="/users">Users</NavLink>
-      <NavLink to="/register">Register</NavLink>
+      <NavLink className="me-3" to="/">
+        Home
+      </NavLink>
+      <NavLink className="me-3" to="/products">
+        Products
+      </NavLink>
+      <NavLink className="me-3" to="/users">
+        Users
+      </NavLink>
+      <NavLink className="me-3" to="/register">
+        Register
+      </NavLink>
+      <NavLink to="/login">Login</NavLink>
     </div>
   );
 };

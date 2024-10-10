@@ -16,6 +16,7 @@ import PageNotFound from "./components/PageNotFound";
 import UserDetails from "./components/UserDetails";
 import NewUser from "./components/NewUser";
 import Register from "./components/Register";
+import Login from "./components/Login";
 
 function App() {
   let myName: string = "Mor";
@@ -36,7 +37,8 @@ function App() {
             <Route path=":id" element={<UserDetails />} />
             <Route path="new" element={<NewUser />} />
           </Route>
-          <Route path="/register" element={<Register/>} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer developerName={myName} />
